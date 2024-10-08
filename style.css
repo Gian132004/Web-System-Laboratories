@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(24, 23, 23);
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.playlist {
+    width: 60%;
+    background-color: rgb(24, 23, 23); 
+    padding: 20px; 
+    border-radius: 8px; 
+    border: 1px solid #ccc;
+}
+
+.add-song {
+    width: 35%;
+    background-color:rgb(24, 23, 23); 
+    padding: 20px; 
+    border-radius: 8px; 
+    border: 1px solid #ccc;
+}
+
+h2 {
+    text-align: center;
+}
+
+.search-bar,
+#song-title,
+#artist-name {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #444;
+    color: white;
+}
+
+.song {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.song-title {
+    font-weight: bold;
+}
+
+.artist-name {
+    display: block; 
+    font-size: 0.9em; 
+    color: #666; 
+}
+
+button {
+    background-color: #eeff00;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #eeff00;
+}
+#add-button {
+    background-color: blue; 
+    color: white; 
+    border: none; 
+    padding: 8px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+#add-button:hover {
+    background-color: darkblue;
+}
+.add-song {
+    display: flex; 
+    flex-direction: column; 
+    margin-left: 30px;
+    margin: 30px;
+    
+}
+
+#add-button {
+    align-self: center; 
+    margin-top: 15px; 
+}
