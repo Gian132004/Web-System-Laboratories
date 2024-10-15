@@ -2,16 +2,18 @@ body {
     font-family: Arial, sans-serif;
     background-color: rgb(24, 23, 23);
     color: white;
+    background-image: url();
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
     margin: 20px;
+    padding-left: 200px;
+    margin-top: 180px;
+    margin-left: 50px;
 }
 
 .playlist {
-    width: 60%;
+    width: 80%;
     background-color: rgb(24, 23, 23); 
     padding: 20px; 
     border-radius: 8px; 
@@ -19,7 +21,8 @@ body {
 }
 
 .add-song {
-    width: 35%;
+    width: 80%;
+    height: 100%;
     background-color:rgb(24, 23, 23); 
     padding: 20px; 
     border-radius: 8px; 
@@ -60,17 +63,12 @@ h2 {
 }
 
 button {
-    background-color: #eeff00;
     color: rgb(0, 0, 0);
     border: none;
-    padding: 5px 10px;
+    padding: 7px 13px;
     border-radius: 5px;
     cursor: pointer;
     justify-content: center;
-}
-
-button:hover {
-    background-color: #eeff00;
 }
 #add-button {
     background-color: blue; 
@@ -87,8 +85,6 @@ button:hover {
 .add-song {
     display: flex; 
     flex-direction: column; 
-    margin-left: 30px;
-    margin: 30px;
     
 }
 

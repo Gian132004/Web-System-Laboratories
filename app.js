@@ -1,45 +1,74 @@
-
-const title = document.getElementById('song-title');
-const artist = document.getElementById('artist-name');
-const addbutton = document.getElementById('add-button');
-const ul = document.getElementById('songList')
-
-addbutton.addEventListener('click', ()=>{
-    const newTitle = title.value;
-    const newArtist = artist.value;
-
-    //create element
-    const p = document.createElement('p');
-    const small = document.createElement('small');
-    const div = document.createElement('div');
-    const li = document.createElement('li');
-    const button = document.createElement('button')
-    li.append(p);
-    li.append(small);
-    ul.append(li);
-    li.append(button);
-
-    console.log(li);
-    
+document.addEventListener('DOMContentLoaded', () => {
+    const addButton = document.getElementById('add-button');
+    const songList = document.getElementById('Songlist');
+    const songTitleInput = document.getElementById('song-title');
+    const artistNameInput = document.getElementById('artist-name');
+    const searchBar = document.querySelector('.search-bar');
 
     
+    function attachDeleteFunctionality(button) {
+        button.addEventListener('click', () => {
+            const listItem = button.closest('.song-item');
+            songList.removeChild(listItem);
+        });
+    }
 
+    
+    const deleteButtons = document.querySelectorAll('.btn-primary');
+    deleteButtons.forEach(button => attachDeleteFunctionality(button));
 
-    //set value to the element
-    p.innerHTML = newTitle;
-    small.innerHTML = newArtist;
+    
+    function createSongItem(title, artist) {
+        const listItem = document.createElement('li');
+        listItem.className = 'song-item';
+        listItem.innerHTML = `
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <p class="song-title">${title}</p>
+                    <small class="artist-name"> ${artist}</small>
+                </div>
+                <button class="btn btn-primary">Delete</button>
+            </div>
+            <hr>
+        `;
 
+        
+        const deleteButton = listItem.querySelector('.btn-primary');
+        attachDeleteFunctionality(deleteButton);
 
-    button.innerHTML = "Delete";
-    //add class to element
-    p.classList.add('song-title');
-    small.classList.add('artist-name');
+        return listItem;
+    }
 
+    
+    function addSong() {
+        const songTitle = songTitleInput.value.trim();
+        const artistName = artistNameInput.value.trim();
 
-    //create container
+        if (songTitle && artistName) {
+            songList.appendChild(createSongItem(songTitle, artistName));
 
+            
+            songTitleInput.value = '';
+            artistNameInput.value = '';
+        } else {
+            alert('Please enter both song title and artist name.');
+        }
+    }
 
+    
+    function filterSongs() {
+        const searchText = searchBar.value.toLowerCase();
+        const songs = songList.getElementsByTagName('li');
 
-})
+        for (let song of songs) {
+            const title = song.querySelector('.song-title').textContent.toLowerCase();
+            const artist = song.querySelector('.artist-name').textContent.toLowerCase();
+            const isMatch = title.includes(searchText) || artist.includes(searchText);
+            song.style.display = isMatch ? '' : 'none';
+        }
+    }
 
-console.log(title, artist, addbutton)
+    
+    addButton.addEventListener('click', addSong);
+    searchBar.addEventListener('input', filterSongs);
+});

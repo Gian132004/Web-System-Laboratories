@@ -9,52 +9,64 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="playlist">
-        <div class="playlist-header">
-            <h2 class="fw-bold">MY PLAYLIST</h2>
-            <input type="text" class="search-bar" placeholder="Search for a song...">
+<div class="container row g-6">
+    <div class="col-lg-6">
+        <div class="playlist">
+            <header class="playlist-header">
+                <h2>My Playlist</h2>
+                <input type="text" class="search-bar" placeholder="Search for a song..." aria-label="Search for a song">
+            </header>
+    
+            <ul class="list-unstyled" id="Songlist">
+                <li class="song-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="song-title">DIE WITH A SMILE</p>
+                            <small class="artist-name">Bruno Mars Solo</small>
+                        </div>
+                        <button class="btn btn-primary">Delete</button>
+                    </div>
+                    <hr>
+                </li>
+                <li class="song-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="song-title">DIE FOR YOU</p>
+                            <small class="artist-name">The Weekend</small>
+                        </div>
+                        <button class="btn btn-primary">Delete</button>
+                    </div>
+                    <hr>
+                </li>
+                <li class="song-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="song-title">IS THERE ANYONE ELSE?</p>
+                            <small class="artist-name">The Weekend</small>
+                        </div>
+                        <button class="btn btn-primary">Delete</button>
+                    </div>
+                    <hr>
+                </li>
+            </ul>
         </div>
-        
-        <ul class="list-unstyled" id="songList"> <!-- Changed to an unordered list -->
-            <li class="song">
-                <div>
-                    <p class="song-title">WOWOWIN NG LAHAT</p>
-                    <small class="artist-name">Ariel Maravilla</small>
-                </div>
-                <button>Delete</button>
-                
-            </li><hr>
-            <li class="song">
-                <div>
-                    <p class="song-title">DI KA PAMIGAY</p>
-                    <small class="artist-name">Adrian Pardo</small>
-                </div>
-                <button>Delete</button>
-            </li><hr>
-            <li class="song">
-                <div>
-                    <p class="song-title">WALANG ALAM</p>
-                    <small class="artist-name">Hev Abi</small>
-                </div>
-                <button>Delete</button>
-            </li><hr>
-        </ul>
     </div>
-
-    <div class="add-song">
-        <h2>ADD SONG</h2>
-        <label for="song-title">Title:</label>
-        <input type="text" id="song-title" placeholder="Enter song title">
-        
-        <label for="artist-name">Artist:</label>
-        <input type="text" id="artist-name" placeholder="Enter artist name">
-        
-        <button id="add-button">Add</button>
+  
+    <div class="col-lg-6">
+        <div class="add-song">
+            <h2>Add Song</h2>
+            <label for="song-title">Title:</label>
+            <input type="text" id="song-title" placeholder="Enter song title" aria-label="Song title">
+            
+            <label for="artist-name">Artist:</label>
+            <input type="text" id="artist-name" placeholder="Enter artist name" aria-label="Artist name">
+            
+            <button id="add-button" class="btn btn-primary" aria-label="Add song">Add</button>
+        </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
